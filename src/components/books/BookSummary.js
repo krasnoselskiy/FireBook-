@@ -1,4 +1,5 @@
 import React from "react";
+import moment from 'moment';
 import './book.css';
 
 const BookSummary = ({ book }) => {
@@ -10,7 +11,7 @@ const BookSummary = ({ book }) => {
         <p>
           Posted by: <span className="author">{book.authorFirstName} {book.authorLastName}</span>
         </p>
-        <p className="grey-text">{book.createdAt}</p>
+        <p className="grey-text">{moment(book.createdAt).fromNow()}</p>
       </div>
     </div>
   );

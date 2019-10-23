@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
+import moment from 'moment';
 import { firestoreConnect } from "react-redux-firebase";
 
 const BookDetails = props => {
@@ -19,7 +20,7 @@ const BookDetails = props => {
             <div>
               Posted by {book.authorFirstName} {book.authorLastName}
             </div>
-            <div>{book.createdAt}</div>
+            <div>{moment(book.createdAt).fromNow()}</div>
           </div>
         </div>
       </div>
