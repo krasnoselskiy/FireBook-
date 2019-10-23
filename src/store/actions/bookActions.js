@@ -5,13 +5,7 @@ export const createBook = book => {
     const uid = getState().firebase.auth.uid;
     const firstName = profile.firstName;
     const lastName = profile.lastName;
-    const creationTime = new Date().toLocaleTimeString("en-US", {
-            hour12: false,
-            hour: "numeric",
-            minute: "numeric"
-          });
-
-    const creationDate = new Date().toLocaleDateString();
+    const creationTime = new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate() + " " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
 
     firestore
       .collection("books")
@@ -20,7 +14,7 @@ export const createBook = book => {
         authorFirstName: firstName,
         authorLastName: lastName,
         authorId: uid,
-        createdAt: `${creationDate} at ${creationTime}`
+        createdAt: creationTime
       })
       .then(() => {
         dispatch({ type: "CREATE_BOOK", book });
