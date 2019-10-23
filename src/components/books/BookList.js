@@ -14,7 +14,7 @@ const BookList = ({ books }) => {
             <Link to={"/book/" + book.id} key={book.id}>
               <BookSummary book={book} />
             </Link>
-          );
+          )
         })}
     </div>
   );

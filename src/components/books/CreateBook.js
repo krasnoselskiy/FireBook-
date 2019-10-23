@@ -19,6 +19,7 @@ class CreateBook extends Component {
     e.preventDefault();
 
     this.props.createBook(this.state);
+    this.props.history.push('/');
   };
 
   render() {

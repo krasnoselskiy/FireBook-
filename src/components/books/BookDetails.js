@@ -19,7 +19,7 @@ const BookDetails = props => {
             <div>
               Posted by {book.authorFirstName} {book.authorLastName}
             </div>
-            <div>2nd October 14:30</div>
+            <div>{book.createdAt}</div>
           </div>
         </div>
       </div>
