@@ -9,7 +9,7 @@ const BookList = ({ books }) => {
     <div className="book-list section">
       <h4>BookList</h4>
 
-      {books && books.sort((a, b) => (a.createdAt < b.createdAt) ? 1 : -1).map(book => {
+      {books && books.map(book => {
           return (
             <Link to={"/book/" + book.id} key={book.id}>
               <BookSummary book={book} />
