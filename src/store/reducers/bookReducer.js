@@ -21,7 +21,6 @@ const initialState = {
 const bookReducer = (state = initialState, action) => {
   switch (action.type) {
     case "CREATE_BOOK":
-      console.log("CREATE_BOOK", action.book);
       break;
     case "CREATE_BOOK_ERR":
       return state;
