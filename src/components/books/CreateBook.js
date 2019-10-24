@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { toast } from 'react-toastify';
 
 import { createBook } from "../../store/actions/bookActions";
 
@@ -19,6 +20,7 @@ class CreateBook extends Component {
     e.preventDefault();
 
     this.props.createBook(this.state);
+    toast.success("Book is added!");
     this.props.history.push('/');
   };
 
